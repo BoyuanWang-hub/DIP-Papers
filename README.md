@@ -27,7 +27,11 @@ Firstly when you run "Eassy_Demo.py", you will see the main menu:
 ## Running Results?
 
 #### Results of the No. 1 paper:
+<<<<<<< HEAD
 <img src=".\readme_images\2.jpg" style="zoom:35%;" />
+=======
+<img src=".\readme_images\2.jpg" style="zoom:35%;" />
+>>>>>>> 45f6f89d184c0a72090a83a2a62438fbe615fb50
 
 #### Results of the No. 2 paper:
 <img src=".\readme_images\3.jpg" style="zoom:25%;" />
