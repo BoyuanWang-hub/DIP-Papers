@@ -22,7 +22,7 @@ Firstly when you run "Eassy_Demo.py", you will see the main menu:
 ## Running Results?
 
 #### Results of the No. 1 paper:
-<img src="D:\A-2020第一学期课件\大三下\数字图像处理\Essay_All_Demo\readme_images\2.jpg" style="zoom:35%;" />
+<img src="./readme_images\2.jpg" style="zoom:35%;" />
 
 #### Results of the No. 2 paper:
 <img src="D:\A-2020第一学期课件\大三下\数字图像处理\Essay_All_Demo\readme_images\3.jpg" style="zoom:25%;" />
