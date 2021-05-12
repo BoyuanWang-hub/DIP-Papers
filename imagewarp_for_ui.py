@@ -90,7 +90,6 @@ class ImageWarping:
         temp_mat1 = np.mat([v_sub_p1, [v_sub_p1[1], -v_sub_p1[0]]])
         return (wi[0]*temp_mat).dot(temp_mat1.T)
 
-
     def begin_warp(self, is_enlarge):
         p,q = self.find_points()
         ### 先做个测试一下 ###

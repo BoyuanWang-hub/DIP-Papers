@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-=======
 # Digital-Image-Processing-Essays
 
->>>>>>> 9ea871a78f7f8170d4795a034ade78121465c328
 ## In this project, I have reproduced six classical papers and finally a demo is presented.
 
 The total six papers reproduced are showing below:
@@ -27,11 +24,7 @@ Firstly when you run "Eassy_Demo.py", you will see the main menu:
 ## Running Results?
 
 #### Results of the No. 1 paper:
-<<<<<<< HEAD
-<img src=".\readme_images\2.jpg" style="zoom:35%;" />
-=======
-<img src=".\readme_images\2.jpg" style="zoom:35%;" />
->>>>>>> 45f6f89d184c0a72090a83a2a62438fbe615fb50
+<img src=".\readme_images\2.jpg" style="zoom:35%;" /><img src=".\readme_images\2.jpg" style="zoom:35%;" />
 
 #### Results of the No. 2 paper:
 <img src=".\readme_images\3.jpg" style="zoom:25%;" />
@@ -49,18 +42,5 @@ Firstly when you run "Eassy_Demo.py", you will see the main menu:
 <img src=".\readme_images\8.png" style="zoom:45%;" />
 
 
-
-<<<<<<< HEAD
-
 #### Nankai University.  Boyuan Wang
 # The End.
-
-
-
-
-
-
-
-=======
-# The End.
->>>>>>> 9ea871a78f7f8170d4795a034ade78121465c328

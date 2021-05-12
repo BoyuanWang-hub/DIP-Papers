@@ -319,7 +319,7 @@ class SeamCarving:
 
     def seam_enlarge(self, target, axis = 1):
         if axis == 1:
-            #assert target <= self.l * (1+self.rate)
+            assert target <= self.l * (1+self.rate)
             target_image = np.zeros((self.r, target, 3), dtype = np.float)
             ### 每一行 ###
             pbar = tqdm.tqdm(range(self.r))
@@ -338,7 +338,7 @@ class SeamCarving:
                             target_image[ii, cur_index] = (self.img1[ii, kk].astype(np.float) + self.img1[ii, kk + 1]) / 2
                     cur_index += 1
         else:
-            #assert target <= self.r * (1+self.rate)
+            assert target <= self.r * (1+self.rate)
             target_image = np.zeros((target, self.l, 3), dtype=np.float)
             ### 每一行 ###
             pbar = tqdm.tqdm(range(self.l))
@@ -381,14 +381,35 @@ class SeamCarving:
         while self.r != target[0] or self.l != target[1]:
             if target[0] == self.r:
                 ### 只需要扩展列 ###
-                set_pbar(target[0], target[1])
-                if target[1] < self.l:target_image = self.realtime_resizing(after=target[1], axis=1)
-                else: target_image = self.seam_enlarge(target=target[1], axis=1)
+                # set_pbar(target[0], target[1])
+                # if target[1] < self.l:target_image = self.realtime_resizing(after=target[1], axis=1)
+                # else: target_image = self.seam_enlarge(target=target[1], axis=1)
+                if target[1] < self.l:
+                    line_target = max(int((1 - self.rate) * self.l), target[1])
+                    ### 缩小 ###
+                    set_pbar(self.r, line_target)
+                    target_image = self.realtime_resizing(line_target, axis=1)
+                else:
+                    line_target = min(int((1 + self.rate) * self.l), target[1])
+                    ### 放大 ###
+                    set_pbar(self.r, line_target)
+                    target_image = self.seam_enlarge(line_target, axis=1)
             elif target[1] == self.l:
+                # ### 只需要扩展列 ###
+                # set_pbar(target[0], target[1])
+                # if target[0] < self.r: target_image = self.realtime_resizing(after=target[0], axis=0)
+                # else: target_image = self.seam_enlarge(target=target[0], axis=0)
                 ### 只需要扩展列 ###
-                set_pbar(target[0], target[1])
-                if target[0] < self.r: target_image = self.realtime_resizing(after=target[0], axis=0)
-                else: target_image = self.seam_enlarge(target=target[0], axis=0)
+                if target[0] < self.r:
+                    row_target = max(int((1 - self.rate) * self.r), target[0])
+                    ### 缩小 ###
+                    set_pbar(row_target, self.l)
+                    target_image = self.realtime_resizing(row_target, axis=0)
+                else:
+                    row_target = min(int((1 + self.rate) * self.r), target[0])
+                    ### 放大 ###
+                    set_pbar(row_target, self.l)
+                    target_image = self.seam_enlarge(row_target, axis= 0)
             else:
                 ### 看目前该改变哪一个了 每次1.1倍进行改动 ###
                 if which == 0:
